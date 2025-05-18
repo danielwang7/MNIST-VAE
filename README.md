@@ -75,9 +75,7 @@ $$
 
 Without going into the derivation, the ELBO is as follows, and is used as the loss for the encoder and decoder:
 
-$${
-\log p_\theta(x) \geq \mathbb{E}_{z \sim q\phi(z \mid x)}[\log p_\theta(x \mid z)] - \text{KL}(q_\phi(z \mid x) \,\|\, p(z))
-}$$
+$$\log p_\theta(x) \geq E_{z \sim q\phi(z \mid x)}\[\log p_\theta(x \mid z)\] - \text{KL}(q_\phi(z \mid x) \,\|\, p(z))$$
 
 
 - One last detail referred to as the **reparameterization trick;** we need to find a way to sample the distribution that is differentiable to be able to optimize it with stochastic gradient descent
@@ -87,8 +85,10 @@ $${
 $$
 z=g_\phi(\epsilon, x)
 $$
+
 1. $\epsilon \sim p(\epsilon)$ → generate from distribution independent from encoder params, like a simple gaussian
 2. $z=\mu + \sigma \epsilon$ , where $\epsilon \sim \mathcal{N}(0,1)$ → transform the sample with a function to desired distribution
+
 
 
 This has been a super brief overview of VAE math, and is exactly what this code implements.

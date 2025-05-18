@@ -20,9 +20,12 @@ $ pip install -r requirements.txt
 ```
 ## Components
 
-`model.py` → implementation of the model and ELBO loss; obtained from the [PyTorch VAE](https://github.com/AntixK/PyTorch-VAE?tab=readme-ov-file) repository 
+`model.py` → implementation of the model and ELBO loss; obtained from the [PyTorch VAE](https://github.com/AntixK/PyTorch-VAE?tab=readme-ov-file) repository
+
 `train.py` → Contains logic for training the VAE
+
 `visualize.py`→ Contains logic for generating visualizations of latent space and samples
+
 
 ## Results
 Example of a 20x20 visualization of the learned MNIST manifold:
